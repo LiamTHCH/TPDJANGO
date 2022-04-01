@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Voir un Livre</title>
+</head>
+<body>
+  <h1> Livre ID:{{ID}}</h1>
+    {% for livre in Livre %}
+    {% if livre.id == ID %}
+    <table class="table is-fullwidth is-hoverable">
+        <thead>
+          <tr>
+            <th><abbr title="ID">ID</abbr></th>
+            <th>Titre</th>
+            <th>Date parution</th>
+            <th>Nombres de pages</th>
+            <th>Resume</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>{{livre.id}}</th>
+            <td>{{livre.titre}}</td>
+            <td>{{livre.date_parution}}</td>
+            <td>{{livre.nombre_pages}}</td>
+            <td>{{livre.resume}}</td>
+          </tr>
+        </tbody>
+      </table>
+      {% endif %}
+{% endfor %}       
+</body>
+</html>
